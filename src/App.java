@@ -1,4 +1,7 @@
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.util.concurrent.Flow.Subscriber;
 
 /**
  * Main application for the Data Analysis Mini‑Project.
@@ -15,39 +18,16 @@ import java.io.File;
  */
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws FileNotFoundException {
+        File myFile = new File("C:\\Users\\524234\\OneDrive - San Diego Unified School District\\Documents\\GitHub\\Cereal_Data_Analysis\\cereal.csv");
+        Scanner myScanner = new Scanner(myFile);
 
-        // TODO: Update this with your CSV file path
-        File file = new File("data/your_dataset.csv");
+        myScanner.useDelimiter(",");
 
-        // TODO: Create an array of Data objects to store data
+        myScanner.nextLine(); // Skip the header row
+        for (int i = 0; i < 20; i++){
+            System.out.println(myScanner.next());
+        }
 
-
-        // TODO: Read file using Scanner
-        // - Skip header if needed
-        // - Loop through rows
-        // - Split each line by commas
-        // - Convert text to numbers when needed
-        // - Create new Data objects
-        // - Add to your array
-
-
-        // TODO: Call your analysis methods
-        // Example:
-        // double maxValue = findMaxValue(dataList);
-        // double average = computeAverageValue(dataList);
-
-
-        // TODO: Print insights
-        // - Number of rows loaded
-        // - Min, max, average, or any other findings
-        // - Final answer to your guiding question
-
-
-        // OPTIONAL TODO:
-        // Add user interaction:
-        // Ask the user what kind of analysis they want to see
     }
-
-
 }
